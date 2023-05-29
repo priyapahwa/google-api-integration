@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,20 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "django.contrib.sites",
-
     "rest_framework",
-    "rest_framework.authtoken",
-    # "dj_rest_auth",
-
-    "allauth",
-    "allauth.account",
-    # "dj_rest_auth.registration",
-
-    "social_django",
-
-    # "allauth.socialaccount",
-    # "allauth.socialaccount.providers.google",
-    
     "api.apps.ApiConfig",
 ]
 
@@ -82,7 +69,7 @@ ROOT_URLCONF = "backend.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [os.path.join(BASE_DIR,'templates')],
+        "DIRS": [os.path.join(BASE_DIR, "templates")],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -150,12 +137,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = 'home'
-LOGOUT_REDIRECT_URL = 'home'
-
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    "social_core.backends.google.GoogleOAuth2"]
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = "264874781337-3v86g2ul5jvc4csjpb43ssvu36hltpl0.apps.googleusercontent.com"
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"
+    "social_core.backends.google.GoogleOAuth2",
+]
