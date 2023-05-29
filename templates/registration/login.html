@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Log In</h2>
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Log In</button>
+<div class="social">
+<a href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+</div>
+</form>
+{% endblock content %}
